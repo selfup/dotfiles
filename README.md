@@ -1,6 +1,6 @@
 # Muh Dotfiles
 
-No symlinks just a simple scripts
+No symlinks just simple scripts
 
 :tada:
 
