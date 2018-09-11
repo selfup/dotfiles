@@ -3,4 +3,14 @@
 # Use at your own risk!
 
 cp -rp ./linux/.bash* $HOME \
-    && source $HOME/.bashrc
+    && echo "
+    dotfiles synced!
+
+    first time?
+    
+    source ~/.bashrc
+    
+    not first time?
+    
+    bgo
+    "
