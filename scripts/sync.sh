@@ -3,6 +3,7 @@
 # Use at your own risk!
 
 cp -rp ./linux/.bash* $HOME \
+    && tmux source $HOME/.tmux.conf \
     && echo "
     dotfiles synced!
 

@@ -151,10 +151,3 @@ parse_git_branch() {
 export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 source $HOME/.bash_secrets
-
-if [[ -f /usr/bin/tmux ]]
-then
-    tmux source-file $HOME/.tmux.conf
-else
-    echo 'tmux is not installed - sudo apt install tmux -y'
-fi
