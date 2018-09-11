@@ -2,4 +2,5 @@
 
 # Use at your own risk!
 
-cp -rp ./linux/.bash* $HOME
+cp -rp ./linux/.bash* $HOME \
+    && source $HOME/.bashrc

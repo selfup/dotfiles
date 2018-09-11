@@ -8,10 +8,10 @@ No symlinks just a simple scripts
 
 Must clone repo at root of Documents directory.
 
-It's just something I do. All repos live there :smile:
+```bash
+cd $HOME/Documents && git clone https://github.com/selfup/dotfiles.git
+```
 
-If I need to namespace, I namespace inside of the Documents dir.
-
-All Operating Systems come with this Directory by default (Ubuntu, Windows, MacOS), so might as well use it!
+All popular operating systems come with this Directory by default (Ubuntu, Windows, MacOS), so might as well use it!
 
 :pray:
