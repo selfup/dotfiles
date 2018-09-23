@@ -2,17 +2,33 @@
 
 # Use at your own risk!
 
+TMUX="false"
+
+if [[ $1 == "tmux" ]]
+then
+    TMUX="true"
+fi
+
+if [[ -f $HOME/.tmux.conf ]] && [[ $TMUX == "true" ]]
+then
+    echo "\
+    Backing up tmux config"
+
+    cp $HOME/.tmux.conf $HOME/.tmux.old.conf.bak
+    
+    echo "
+    Previous tmux config is now here: $HOME/.tmux.old.conf.bak"
+
+    cp linux/.*.conf $HOME
+
+    echo "
+    tmux conf synced!"
+fi
+
 cp -rp ./linux/.bash* $HOME \
-    && cp linux/.*.conf $HOME \
-    && tmux source $HOME/.tmux.conf \
     && echo "
     dotfiles synced!
 
-    first time?
+    first time?: source ~/.bashrc
     
-    source ~/.bashrc
-    
-    not first time?
-    
-    bgo
-    "
+    not first time?: bgo"
