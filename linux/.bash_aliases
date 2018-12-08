@@ -63,3 +63,18 @@ alias bpro="code ~/.bashrc"
 alias bgo="source ~/.bashrc"
 alias dotfiles="cd $HOME/Documents/dotfiles"
 alias dpro="code $HOME/Documents/dotfiles/linux/.bashrc"
+
+function copy() {
+    if [[ "$OSTYPE" == "linux-gnu" ]]
+    then
+        cat $1 | xclip -selection clipboard
+    fi
+}
+
+alias batstat="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
+alias dbstart="sudo /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start"
+
+alias godot="$HOME/Godot/Godot_v3.0.6-stable_x11.64"
+alias aliases="code $HOME/.bash_aliases"
+
+alias apkemu="$HOME/Android/Sdk/emulator/emulator @foobar"

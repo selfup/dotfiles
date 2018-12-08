@@ -140,7 +140,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-. $HOME/.asdf/asdf.sh && . $HOME/.asdf/completions/asdf.bash
+export ANDROID_HOME=$HOME/Android/Sdk 
+export PATH=$PATH:$ANDROID_HOME/tools 
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$HOME/FLUTTER/flutter/bin:$PATH
+export PATH="$PATH:/usr/lib/dart/bin"
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
 
 # Git branch in prompt
 
@@ -151,3 +158,6 @@ parse_git_branch() {
 export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 source $HOME/.bash_secrets
+
+# set keyboard config
+xset r rate 175 40
