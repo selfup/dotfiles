@@ -4,7 +4,7 @@
 
 # Use at your own risk!
 
-set -ex
+set -e
 
 TMUX="false"
 
