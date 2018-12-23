@@ -6,14 +6,16 @@
 
 set -e
 
-TMUX="false"
+IN_DOCS_DIR=$(pwd | grep '/Documents/dotfiles')
+IN_SCRIPTS_DIR=$(pwd | grep '/Documents/dotfiles/scripts')
 
-if [[ $1 == "tmux" ]]
+if [[ $IN_DOCS_DIR == "" || $IN_SCRIPTS_DIR != "" ]]
 then
-    TMUX="true"
+    echo "NOT IN CORRECT DIRECTORY PLEASE READ THE README"
+    exit 1
 fi
 
-if [[ -f $HOME/.tmux.conf ]] && [[ $TMUX == "true" ]]
+if [[ -f $HOME/.tmux.conf ]] && [[ $TMUX == "1" ]]
 then
     echo "\
     Backing up tmux config"
@@ -29,21 +31,16 @@ then
     tmux conf synced!"
 fi
 
-cp linux/.gitconfig $HOME/.gitconfig
+if [[ $GIT_CONFIG == "1" ]]
+then
+    cp linux/.gitconfig $HOME/.gitconfig
 
-echo "
-    Please update $HOME/.gitconfig!
-
-    ***
-
-"
+    echo "**** Please update $HOME/.gitconfig!"
+fi
 
 cp -rp ./linux/.bash* $HOME
 
-echo "
-    dotfiles synced!
+echo "**** dotfiles synced!
 
-    first time?: source ~/.bashrc
-    
-    not first time?: bgo
-"
+     first time? $ source ~/.bashrc
+     not first time? $ bgo"
