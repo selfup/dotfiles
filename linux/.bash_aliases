@@ -57,6 +57,9 @@ alias gpp="git push"
 alias gppoh="git push origin -u HEAD"
 alias gbr="git branch"
 alias gi="git init"
+alias gmm="git merge master"
+alias brm="git rebase -i master"
+alias gsync="git checkout master && git pull && git checkout - && git merge master"
 
 # easy to make new aliases mostly
 alias bpro="code ~/.bashrc"

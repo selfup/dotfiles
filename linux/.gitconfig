@@ -1,0 +1,21 @@
+[user]
+	email = user@example.com
+	name = user
+
+[alias]
+	s = status
+	k = checkout
+	kb = checkout -b
+	a = add .
+	c = commit -m
+	cc = commit
+	ca = commit --amend
+	oops = reset --hard
+	p = pull
+	pp = push
+	poh = pull origin -u HEAD
+	ppoh = push origin -u HEAD
+	df = diff
+	in = init
+	rbm = rebase -i master
+	mm = merge master
