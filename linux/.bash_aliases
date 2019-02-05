@@ -60,6 +60,8 @@ alias gi="git init"
 alias gmm="git merge master"
 alias brm="git rebase -i master"
 alias gsync="git checkout master && git pull && git checkout - && git merge master"
+alias grp="git pull release master"
+alias grpp="git push release master"
 
 # easy to make new aliases mostly
 alias bpro="code ~/.bashrc"
@@ -77,7 +79,4 @@ function copy() {
 alias batstat="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias dbstart="sudo /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start"
 
-alias godot="$HOME/Godot/Godot_v3.0.6-stable_x11.64"
 alias aliases="code $HOME/.bash_aliases"
-
-alias apkemu="$HOME/Android/Sdk/emulator/emulator @foobar"

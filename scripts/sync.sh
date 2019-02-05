@@ -6,8 +6,8 @@
 
 set -e
 
-IN_DOCS_DIR=$(pwd | grep '/Documents/dotfiles')
-IN_SCRIPTS_DIR=$(pwd | grep '/Documents/dotfiles/scripts')
+IN_DOCS_DIR=$(pwd | grep '/Documents/dotfiles' || echo '')
+IN_SCRIPTS_DIR=$(pwd | grep '/Documents/dotfiles/scripts' || echo '')
 
 if [[ $IN_DOCS_DIR == "" || $IN_SCRIPTS_DIR != "" ]]
 then
