@@ -76,6 +76,37 @@ function copy() {
     fi
 }
 
+
+# git sync upstream
+function gsu() {
+    set -e
+
+    UPSTREAM_CHECK=$(git remote -v | grep upstream || echo '')
+    if [[ $UPSTREAM_CHECK == '' ]]
+    then
+        echo "NO UPSTREAM SET -- ABORTING"
+        exit 1
+    fi
+
+    MASTER_CHECK=$(git status | grep 'On branch master' || echo '')
+    if [[ $MASTER_CHECK == '' ]]
+    then
+        echo "NOT ON MASTER -- ABORTING"
+        exit 1
+    fi
+
+    CLEAN_CHECK=$(git status | grep 'nothing to commit, working tree clean' || echo '')
+    if [[ $CLEAN_CHECK == '' ]]
+    then
+        echo "BRANCH IS NOT CLEAN -- ABORTING"
+        exit 1
+    fi
+
+    git fetch upstream
+    git rebase upstream/master
+    git push origin master
+}
+
 alias batstat="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
 alias dbstart="sudo /usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start"
 
