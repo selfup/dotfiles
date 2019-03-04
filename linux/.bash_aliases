@@ -1,6 +1,7 @@
 # the best
 alias ll='ls -lah'
 alias 88rulez="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt update -y"
+alias firmup="sudo fwupdmgr refresh && echo n | sudo fwupdmgr get-updates && sudo fwupdmgr update"
 
 # general aliases
 alias c="code ."
