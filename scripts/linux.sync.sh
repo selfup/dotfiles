@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-
+########################################################
 # Sync Dotfiles in linux dir to actual dotfiles in $HOME
-
+#######################
 # Use at your own risk!
+#######################
 
 set -e
 

@@ -114,15 +114,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# set capslock to ctrl
+# set capslock to ctrl (linux)
 setxkbmap -layout us -option ctrl:nocaps
 
 function mkcd {
     mkdir $1
     cd $1
 }
-
-# path and lang stuff
 
 export PATH="/usr/local/sbin:$PATH"
 export PATH=$PATH:/Users/RJPB2/.cargo/bin
@@ -146,10 +144,11 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$HOME/FLUTTER/flutter/bin:$PATH
 export PATH="$PATH:/usr/lib/dart/bin"
 
-. $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
-
-# Git branch in prompt
+if which asdf > /dev/null
+then
+    . $HOME/.asdf/asdf.sh
+    . $HOME/.asdf/completions/asdf.bash
+fi
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -157,7 +156,10 @@ parse_git_branch() {
 
 export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
-source $HOME/.bash_secrets
+if [[ -f $HOME/.bash_secrets ]]
+then
+    source $HOME/.bash_secrets
+fi
 
-# set keyboard config
+# set keyboard config (linux)
 xset r rate 175 40

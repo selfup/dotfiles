@@ -1,6 +1,10 @@
 # Muh Dotfiles
 
-No symlinks just simple scripts
+No symlinks. just simple scripts.
+
+This was made for me. I am not following conventions at all.
+
+Use at your own risk!
 
 :tada:
 
@@ -15,11 +19,16 @@ cd $HOME/Documents && git clone https://github.com/selfup/dotfiles.git
 All popular operating systems come with this Directory by default (Ubuntu, Windows, MacOS), so might as well use it!
 
 :pray:
+### Mac
 
-### Use
+In the event something catastrophic happens. Clone repo and: `./scripts/mac.sync.pysh.sh`
+
+No realy need for tmux since iTerm2 is baller.
+
+### Linux
 
 1. Go to the repo (stay in root dir of repo)
-1. `./scripts/sync.sh`
+1. `./scripts/linux.sync.sh`
 1. `source ~/.bashrc`
 
 Now next time you sync, just type: `bgo`
@@ -29,7 +38,7 @@ This will source your bashrc :smile:
 ### Use and set gitconfig/tmux
 
 1. Go to the repo (stay in root dir of repo)
-1. `TMUX=1 GIT_CONFIG=1 ./scripts/sync.sh`
+1. `TMUX=1 GIT_CONFIG=1 ./scripts/linux.sync.sh`
 1. Update your name and email in your new global .gitconfig
 1. `$HOME/.gitconfig`
 
@@ -42,7 +51,7 @@ This will source your bashrc :smile:
 
 If you want to try out my tmux config you can opt in to having it synced with your system.
 
-1. Running `TMUX=1 ./scripts/sync.sh` will swap configs and backup your old one
+1. Running `TMUX=1 ./scripts/linux.sync.sh` will swap configs and backup your old one
 1. Must run `./scripts/tmux.sh` if already in a tmux session for the new config to apply
 1. You can also just run `tmux source $HOME/.tmux.conf` (same thing the script does)
 1. Otherwise opening up a new tmux session will load the conf and apply changes
