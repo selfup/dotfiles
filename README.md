@@ -1,10 +1,10 @@
 # Muh Dotfiles
 
-No symlinks. just simple scripts.
+No symlinks. Just simple scripts.
 
-This was made for me. I am not following conventions at all.
+_This was made for me._
 
-Use at your own risk!
+**Use at your own risk!**
 
 :tada:
 
@@ -19,11 +19,6 @@ cd $HOME/Documents && git clone https://github.com/selfup/dotfiles.git
 All popular operating systems come with this Directory by default (Ubuntu, Windows, MacOS), so might as well use it!
 
 :pray:
-### Mac
-
-In the event something catastrophic happens. Clone repo and: `./scripts/mac.sync.pysh.sh`
-
-No realy need for tmux since iTerm2 is baller.
 
 ### Linux
 
