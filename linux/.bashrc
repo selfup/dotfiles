@@ -163,3 +163,11 @@ fi
 
 # set keyboard config (linux)
 xset r rate 175 40
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+export KERL_CONFIGURE_OPTIONS="--without-javac"
+
+export USERPROFILE=$HOME
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+alias clr="clear && echo '' > ~/.bash_history && echo '' > ~/.tmux_history"

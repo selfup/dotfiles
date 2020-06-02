@@ -1,7 +1,32 @@
-# the best
-alias ll='ls -lah'
-alias 88rulez="sudo apt update -y && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt clean -y && sudo apt update -y"
-alias fwupdate="sudo fwupdmgr refresh && echo n | sudo fwupdmgr get-updates && sudo fwupdmgr update"
+alias ll='ls -lagh'
+
+function 88rulez {
+    set -e
+    
+    sudo apt update -y
+    
+    sudo apt dist-upgrade -y
+    
+    sudo apt autoremove -y
+    
+    sudo apt clean -y
+}
+
+function fwupd {
+    set -e
+
+    sudo fwupdmgr refresh
+
+    echo 'n' | sudo fwupdmgr get-updates
+    
+    sudo fwupdmgr update
+}
+
+function batman {    
+    88rulez || (echo 'ERR: (88rulez) failed to fetch or apply hard updates' && exit 1)
+
+    fwupd || (echo 'ERR: (fwupd) failed to fetch or apply firmware updates' && exit 1)
+}
 
 # general aliases
 alias c="code ."
@@ -20,6 +45,8 @@ alias vs="vagrant ssh"
 alias vd="vagrant destroy"
 
 alias p="python"
+alias p3="python3"
+alias pwsh="pwsh-preview"
 
 alias be="bundle exec"
 alias yolo="rake db:reset"
@@ -41,7 +68,6 @@ alias herowomp="heroku run rake db:migrate db:seed"
 alias womp="rake db:migrate db:seed"
 alias bam="rake db:reset"
 alias boom="rake db:drop"
-alias pwsh="pwsh-preview"
 
 # git stuff
 alias oops="git reset --hard"
@@ -67,6 +93,9 @@ alias grpp="git push release master"
 # easy to make new aliases mostly
 alias bpro="code ~/.bashrc"
 alias bgo="source ~/.bashrc"
+alias zgo="source ~/.zshrc"
+alias zpro="code ~/.zshrc"
+
 alias dotfiles="cd $HOME/Documents/dotfiles"
 alias dpro="code $HOME/Documents/dotfiles/linux/.bashrc"
 
@@ -76,7 +105,6 @@ function copy() {
         cat $1 | xclip -selection clipboard
     fi
 }
-
 
 # git sync upstream
 function gsu() {
