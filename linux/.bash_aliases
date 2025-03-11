@@ -1,4 +1,21 @@
 alias ll='ls -lagh'
+alias llr='ls -lagh -R'
+
+function godot {
+    $HOME/.local/bin/godot "$@"
+}
+
+function minisign {
+    $HOME/.local/bin/minisign "$@"
+}
+
+function blender {
+    $HOME/.local/bin/blender/blender "$@"
+}
+
+function zig {
+    $HOME/.local/bin/zig/zig "$@"
+}
 
 function 88rulez {
     set -e
