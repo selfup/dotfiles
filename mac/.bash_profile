@@ -1,27 +1,38 @@
+alias pbrv="brew update --verbose && brew upgrade --verbose && brew cleanup --verbose && brew doctor --verbose && brew list"
+alias pbr="brew update && brew upgrade && brew cleanup && brew doctor && brew list"
+
 alias wrkgh="cd $HOME/workspace/src/github.com/selfup"
 alias wrkgl="cd $HOME/workspace/src/gitlab.com/selfup"
 alias wwwlab="EXECJS_RUNTIME=Node bundle exec middleman"
+
 alias gdk:yolo="bundle exec rake db:drop dev:setup"
 alias gdk:dir="cd $HOME/GITLAB/gitlab-development-kit"
 alias gdk:re_seed="bundle exec rake db:seed_fu"
+
+# just some local IPs that probably don't exist anymore :)
+# wild that I worked on all of these little projects!
+
 alias grapevine="ssh km4izu@192.168.1.7"
 alias hampi="ssh pi@10.230"
 alias hampi3="ssh pi@10.167"
 alias denpi="ssh pi@10.23"
+
 alias ct="cargo test -- --nocapture"
 alias ctb="cargo bench"
 alias cb="cargo build"
 alias cbr="cargo build --release"
 alias cr="cargo run"
 alias crr="cargo run --release"
+
 alias godir="cd $HOME/go/src/github.com/selfup/"
+
 alias vu="vagrant up"
 alias vs="vagrant ssh"
 alias vd="vagrant destroy"
+
 alias be="bundle exec"
 alias dotout="cp $HOME/.bash_profile $HOME/Dropbox/BASH_PROFILE"
-alias pbrv="brew update --verbose && brew upgrade --verbose && brew cleanup --verbose && brew doctor --verbose"
-alias pbr="brew update && brew upgrade && brew cleanup && brew doctor"
+
 alias gb="gulp deploy"
 alias gul="gulp local"
 alias em="emacs"
@@ -29,7 +40,10 @@ alias yolo="rake db:reset"
 alias letsgo="rake db:setup"
 alias proyolo="RAILS_ENV=production rake db:reset"
 alias proletsgo="RAILS_ENV=production rake db:setup"
-alias DO="ssh root@107.170.52.242"
+
+# ha! that's pretty gnarly right there.. been years!!
+alias DO="ssh root@$1"
+
 alias procreate="RAILS_ENV=production rake db:create"
 alias prowomp="RAILS_ENV=production rake db:migrate db:seed"
 alias proserve="RAILS_ENV=production rails s -b "
@@ -70,11 +84,14 @@ alias bpro="code $HOME/.bash_profile"
 alias bgo="source $HOME/.bash_profile"
 alias gsync="git pull --all && git fetch --all"
 alias freebase="git pull --all && git fetch --all && git merge master"
+
 alias yolo:sync="git pull --all && git fetch --all && yarn install && bundle install"
 alias rb:sync="git pull --all && git fetch --all && bundle install"
 alias js:sync="git pull --all && git fetch --all && yarn install"
+
 alias dbstart="postgres -D /usr/local/var/postgres"
 alias felipe="git rebase -s recursive -X theirs"
+
 alias tm="tmux"
 alias ls="ls -Gp -F"
 alias lls="ls -Gp -F -h -la"
@@ -152,6 +169,7 @@ fi
 
 # no stinkin' data
 export HOMEBREW_NO_ANALYTICS=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
